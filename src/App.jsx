@@ -5,7 +5,9 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  
+  const [showPopup, setShowPopup] = useState(false);
+  const [showAchievementsPopup, setShowAchievementsPopup] = useState(false);
+
   return (
     <>
       <div>
@@ -18,14 +20,42 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button className="image-button" onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
-          
         </button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
+      <h1> Missions & Achievements  </h1>
+      <div className="card">
+        <button onClick={() => setShowPopup(true)}>Afficher les missions</button>
+        <button onClick={() => setShowAchievementsPopup(true)}>Afficher les achievements</button>
+      </div>
+
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <h2>Liste des Missions</h2>
+            <ul>
+              <li> Mission 1 </li>
+            </ul>
+            <button onClick={() => setShowPopup(false)}>Fermer</button>
+          </div>
+        </div>
+      )}
+
+      {showAchievementsPopup && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <h2>Liste des Missions</h2>
+            <ul>
+              <li> Achievement 1 </li>
+            </ul>
+            <button onClick={() => setShowAchievementsPopup(false)}>Fermer</button>
+          </div>
+        </div>
+      )}
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
