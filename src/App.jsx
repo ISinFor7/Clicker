@@ -6,9 +6,6 @@ import { points } from './Fonctions.js'
 
 function App() {
   const [count, setCount] = useState(0)
-  const allerVersPage = (url) => {
-    window.location.href = url;
-  };
 
   return (
     <>
@@ -28,12 +25,6 @@ function App() {
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
-      </div>
-      <h1> Missions </h1>
-      <div>
-        <button onClick={() => allerVersPage('https://example.com')}>
-          Aller à Example.com
-        </button>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
