@@ -3,7 +3,9 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: rgba(216, 187, 197, 0.397);
 }
+
 
 .logo {
   height: 6em;
@@ -16,6 +18,25 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.image-button {
+  width: 100px; /* Largeur de l'image */
+  height: 100px; /* Hauteur de l'image */
+  background-image: url('assets/Photo/CannePeche/canneBasique.png'); /* Chemin vers l'image */
+  background-size: cover; /* L'image couvre entièrement le bouton */
+  background-position: center; /* Centrage de l'image */
+  background-repeat: no-repeat; /* Empêche la répétition */
+  border: none; /* Supprime les bordures du bouton */
+  padding: 0; /* Supprime tout espace interne */
+  cursor: pointer; /* Change le curseur au survol */
+}
+
+.image-button:hover {
+  opacity: 0.9; /* Effet visuel au survol */
+}
+
+.image-button:focus {
+  outline: none; /* Supprime le contour par défaut */
 }
 
 @keyframes logo-spin {
