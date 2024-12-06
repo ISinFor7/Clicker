@@ -9,17 +9,9 @@ function setViteClicked() {
   viteClicked = true;
 }
 
-enum fish {
-  "poissonBasique" = 0,
-  "poissonRouge" = 1,
-  "poissonColorer" = 2,
-  "Baleine" = 3,
-}
+const fish = ["poissonBasique", "poissonRouge", "poissonColorer", "Baleine"];
 
-enum ocean {
-  "corail",
-  "algue",
-}
+const ocean = ["corail", "algue"];
 
 enum stat {
   poissonSup,
@@ -137,23 +129,26 @@ enum achievements {
   reactLearn,
   viteLearn,
 }
-function apparition(){
-  const boat = document.getElementById('bateau');
-  boat.style.opacity = '1'; 
+function apparition() {
+  const boat = document.getElementById("bateau");
+  boat.style.opacity = "1";
   // Ajouter la classe "move" pour démarrer l'animation
-  boat.classList.add('move');
+  boat.classList.add("move");
 
   // Une fois l'animation terminée, réinitialiser la position
-  boat.addEventListener('transitionend', () => {
-  boat.style.opacity = '0'; 
-    boat.classList.remove('move'); // Retirer la classe pour revenir à la position initiale
-    // Réinitialiser l'opacité
-  }, { once: true });
+  boat.addEventListener(
+    "transitionend",
+    () => {
+      boat.style.opacity = "0";
+      boat.classList.remove("move"); // Retirer la classe pour revenir à la position initiale
+      // Réinitialiser l'opacité
+    },
+    { once: true }
+  );
 }
-
 
 function equip(item: cap) {}
 
 function buy(augment: augment) {}
 
-export { points, equip, buy, setReactClicked, setViteClicked ,apparition};
+export { points, equip, buy, setReactClicked, setViteClicked, apparition };
