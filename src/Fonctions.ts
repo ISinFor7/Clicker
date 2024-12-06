@@ -7,15 +7,15 @@ function setReactClicked() {reactClicked=true};
 function setViteClicked() {viteClicked=true};
 
 enum fish {
-  "Baleine" = 0,
-  "poissonBasique" = 1,
+  "poissonBasique" = 0,
+  "poissonRouge" = 1,
   "poissonColorer" = 2,
-  "poissonRouge" = 3,
+  "Baleine" = 3,
 }
 
 enum ocean {
-  corail,
-  algue,
+  "corail",
+  "algue",
 }
 
 enum stat {
@@ -81,20 +81,24 @@ type joueur = {
 function points() {
   let chiffre = Math.random() * 5 * stat.poissonSup;
   if (chiffre > 3) {
-    return;
+    j1.nb_dechets += 1;
+    return [0, "dechet"];
   } else if (chiffre > 2) {
-    return;
+    let oceanRandom = Math.random() * 4;
+    j1.nb_coraux += 1;
+    return [chiffre + 1, ocean[oceanRandom]];
   } else {
-    return 1;
+    let poissonRandom = Math.random() * 4;
+    j1.nb_poissons += 1;
+    return [5 * poissonRandom, fish[poissonRandom]];
   }
 }
-
 
 type mission = {
   num: number;
   obj: boolean;
   desc: string;
-}
+};
 
 enum missions {
   cinqPoissons,
@@ -103,18 +107,22 @@ enum missions {
   acheteCinq,
   acheteCent,
   acheteMille,
-  baleine
+  baleine,
 }
 
-const cheater = {num: 1, obj:false, desc:"Essayer d'inspecter l'élément"}
+const cheater = { num: 1, obj: false, desc: "Essayer d'inspecter l'élément" };
 
-const cliqueGauche = {num: 2, obj: false, desc:"Clique Gauche"}
+const cliqueGauche = { num: 2, obj: false, desc: "Clique Gauche" };
 
-const fullscreen = {num: 3, obj:false, desc:"Entrer en fullscreen"}
+const fullscreen = { num: 3, obj: false, desc: "Entrer en fullscreen" };
 
-const speedClick = {num: 4, obj:false, desc: "Cliquer 5 fois en moins d'une seconde"}
+const speedClick = {
+  num: 4,
+  obj: false,
+  desc: "Cliquer 5 fois en moins d'une seconde",
+};
 
-const reactLearn = {num: 5, obj: reactClicked, desc: "Cliquer sur React"}
+const reactLearn = { num: 5, obj: reactClicked, desc: "Cliquer sur React" };
 
 const viteLearn = {num: 6, obj:viteClicked, desc: "Cliquer sur Vite"}
 
@@ -126,8 +134,6 @@ enum achievements {
   reactLearn,
   viteLearn,
 }
-
-
 
 function equip(item: cap) {}
 

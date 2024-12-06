@@ -4,16 +4,16 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { points, equip, buy, setReactClicked, setViteClicked } from "./Fonctions.ts"
 let viteClicked;
-  let setViteClicked ;
+  let setViteClicked2 ;
 let reactClicked;
-  let setReactClicked;
+  let setReactClicked2;
 
 function App() {
   const [count, setCount] = useState(0)
   const [showPopup, setShowPopup] = useState(false);
   const [showAchievementsPopup, setShowAchievementsPopup] = useState(false);
-  [viteClicked, setViteClicked] = useState(false);
-  [reactClicked, setReactClicked] = useState(false);
+  [viteClicked, setViteClicked2] = useState(false);
+  [reactClicked, setReactClicked2] = useState(false);
   const [showRulesPopup, setShowRulesPopup] = useState(true);
   return (
     <>
