@@ -1,4 +1,4 @@
-export default { points, equip, buy, gacha };
+export default { points, equip, buy };
 import { reactClicked } from "./App.jsx";
 //création des énumérations
 enum fish {
