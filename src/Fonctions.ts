@@ -1,10 +1,13 @@
-
 let reactClicked = false;
 let viteClicked = false;
 
 //création des énumérations
-function setReactClicked() {reactClicked=true};
-function setViteClicked() {viteClicked=true};
+function setReactClicked() {
+  reactClicked = true;
+}
+function setViteClicked() {
+  viteClicked = true;
+}
 
 enum fish {
   "poissonBasique" = 0,
@@ -79,16 +82,16 @@ type joueur = {
 };
 
 function points() {
-  let chiffre = Math.random() * 5 * stat.poissonSup;
+  let chiffre = Math.round(Math.random() * 5 * stat.poissonSup);
   if (chiffre > 3) {
     j1.nb_dechets += 1;
     return [0, "dechet"];
   } else if (chiffre > 2) {
-    let oceanRandom = Math.random() * 4;
+    let oceanRandom = Math.round(Math.random() * 4);
     j1.nb_coraux += 1;
     return [chiffre + 1, ocean[oceanRandom]];
   } else {
-    let poissonRandom = Math.random() * 4;
+    let poissonRandom = Math.round(Math.random() * 4);
     j1.nb_poissons += 1;
     return [5 * poissonRandom, fish[poissonRandom]];
   }
@@ -124,7 +127,7 @@ const speedClick = {
 
 const reactLearn = { num: 5, obj: reactClicked, desc: "Cliquer sur React" };
 
-const viteLearn = {num: 6, obj:viteClicked, desc: "Cliquer sur Vite"}
+const viteLearn = { num: 6, obj: viteClicked, desc: "Cliquer sur Vite" };
 
 enum achievements {
   cheater,
@@ -140,6 +143,5 @@ enum achievements {
 function equip(item: cap) {}
 
 function buy(augment: augment) {}
-
 
 export { points, equip, buy, setReactClicked, setViteClicked };
