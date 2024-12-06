@@ -7,6 +7,12 @@ enum fish {
   Baleine,poissonBasique,poissonColorer,poissonRouge
 
 }
+enum dechet{
+  cannette
+}
+enum ocean{
+  corail,algue
+}
 type inv = {
   [key: string]: cap;
 };
