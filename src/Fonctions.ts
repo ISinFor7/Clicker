@@ -2,14 +2,10 @@ export default { points, equip, buy, gacha };
 import { reactClicked } from "./App.jsx";
 //création des énumérations
 enum fish {
-  Baleine,
-  poissonBasique,
-  poissonColorer,
-  poissonRouge,
-}
-
-enum dechet {
-  cannette,
+  "Baleine" = 0,
+  "poissonBasique" = 1,
+  "poissonColorer" = 2,
+  "poissonRouge" = 3,
 }
 
 enum ocean {
@@ -57,6 +53,7 @@ const j1: joueur = {
   multPeche: 1,
 };
 
+const inventaire: inv = [canneBasique];
 type augment = {
   nom: string;
   amelioration: string;
@@ -77,8 +74,16 @@ type joueur = {
 };
 
 function points() {
-  return 1;
+  let chiffre = Math.random() * 5 * stat.poissonSup;
+  if (chiffre > 3) {
+    return;
+  } else if (chiffre > 2) {
+    return;
+  } else {
+    return 1;
+  }
 }
+
 
 type mission = {
   num: number;
@@ -118,9 +123,7 @@ enum achievements {
 }
 
 
+
 function equip(item: cap) {}
 
 function buy(augment: augment) {}
-
-function gacha() {}
-

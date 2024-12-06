@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { points } from '/Fonctions.ts'
 
 let viteClicked;
   let setViteClicked ;
@@ -27,7 +28,7 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <img id='click_button' src='/src/assets/Photo/CannePeche/canneBasique.png' onClick={() => setCount((count) => count + 1)} style={{"pointer-events": "all"}} />
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => { const [x, y] = points(); setCount((count) => count + x);animationPeche(y) }}>
           count is {count}
         </button>
         <p>
@@ -68,6 +69,10 @@ function App() {
       </p>
     </>
   )
+}
+
+function animationPeche() {
+  
 }
 
 function inventory() {
