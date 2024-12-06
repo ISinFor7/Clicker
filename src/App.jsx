@@ -53,8 +53,9 @@ function App() {
       </div>
       
       <div className="card">
-        <img id='click_button' src='/src/assets/Photo/CannePeche/canneBasique.png' onClick={() =>{ const [x, y] = points(); setCount((count) => count + x);Poisson();animationPeche(y);if (count%200===0) {apparition()}}} style={{"pointer-events": "all"}} />
-        <button> 
+        <img id='click_button' src='/src/assets/Photo/CannePeche/canneBasique.png' onClick={() =>{ const [x, y] = points();boutonArgent(x); setCount((count) => count + x);Poisson();animationPeche(y);if (count%200===0) {apparition()}}} style={{"pointer-events": "all"}} />
+        <button>
+          
           {count} Money
         </button>
       </div>
@@ -142,6 +143,16 @@ function achievements() {
       </ul>
     </div>
   );
+}
+
+function boutonArgent(x) { 
+    showPopup && (
+      <div className="popup-overlay">
+        <div className="popup-content">
+          <h3>x</h3>
+        </div>
+      </div>
+    )
 }
 
 export default App;
