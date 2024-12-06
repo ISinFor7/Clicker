@@ -1,21 +1,28 @@
-export default { points, equip, buy, gacha }
+export default { points, equip, buy, gacha };
 
-enum cap {
-    Arpon,canneBasique,cannePrenium
+enum nom_cap {
+  canneBasique,
+  cannePrenium,
+  Arpon,
 }
 enum fish {
-  Baleine,poissonBasique,poissonColorer,poissonRouge
-
+  Baleine,
+  poissonBasique,
+  poissonColorer,
+  poissonRouge,
 }
-enum dechet{
-  cannette
+enum dechet {
+  cannette,
 }
-enum ocean{
-  corail,algue
+enum ocean {
+  corail,
+  algue,
 }
-type inv = {
-  [key: string]: cap;
+type cap = {
+  nom: nom_cap;
+  buff: string;
 };
+type inv = [cap, ...cap[]];
 type joueur = {
   equiped: cap;
   nb_poissons: number;
@@ -23,17 +30,11 @@ type joueur = {
   nb_dechets: number;
 };
 function points() {
-    return 1
+  return 1;
 }
 
-function equip(item) {
+function equip(item) {}
 
-}
+function buy(augment) {}
 
-function buy(augment) {
-
-}
-
-function gacha() {
-
-}
+function gacha() {}
