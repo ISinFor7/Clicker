@@ -11,11 +11,20 @@ function App() {
   return (
     <>
       
-      
+      <div>
+        <img id="bateau" src='/src/assets/Photo/Bateau/bateau.png'>
+        </img>
+      </div>
       <div className="card">
         <img id='click_button' src='/src/assets/Photo/CannePeche/canneBasique.png' onClick={() => setCount((count) => count + 1)} style={{"pointer-events": "all"}} />
         <button onClick={() => setCount((count) => count + 1)}>
           {count} Money
+          if (count % 200 === 0) {
+    // Ajouter la classe 'move-left' pour faire bouger l'image
+           bateau = document.getElementById('bateau');
+           bateau.classList.add('move-left');
+          }
+
         </button>
       </div>
       <h1> Missions & Achievements  </h1>

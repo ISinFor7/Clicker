@@ -136,3 +136,16 @@
 .popup-content button:hover {
   background-color: #0056b3;
 }
+#bateau{
+  width: 200px;
+  height: auto;
+  position: absolute;
+  left: 0;
+  top: 55%;
+  right: -100px;
+  transition: right 1s ease;
+
+}
+#bateau.move-left {
+  right: 0; /* Déplace l'image vers la gauche */
+}

@@ -75,7 +75,6 @@ function equip(item: cap) {}
 function buy(augment: augment) {}
 
 function gacha() {}
-<<<<<<< HEAD
 
 function pecherPoisson(fish){
   
@@ -86,5 +85,3 @@ function pecherDecher(dechet){
 function pecherOcean(ocean){
   const randomIndex = Math.floor(Math.random() *3);
 }
-=======
->>>>>>> b187cb1831cd035ca7081681c0ac992618c568db
