@@ -10,7 +10,7 @@ let reactClicked;
 
 function App() {
   const [count, setCount] = useState(0);
-  const [showPopup, setShowPopup] = useState(false);
+  const [annoyingPopup, setAnnoyingPopup] = useState(false);
   const [showAchievementsPopup, setShowAchievementsPopup] = useState(false);
   [viteClicked, setViteClicked2] = useState(false);
   [reactClicked, setReactClicked2] = useState(false);
@@ -53,12 +53,38 @@ function App() {
       </div>
       
       <div className="card">
-        <img id='click_button' src='/src/assets/Photo/CannePeche/canneBasique.png' onClick={() =>{ const [x, y] = points(); setCount((count) => count + x);boutonArgent(x);Poisson(y);if (count%200===0) {apparition()}}} style={{"pointer-events": "all"}} />
-        <button>
-          
-          {count} Money
-        </button>
-      </div>
+  <img
+    id='click_button'
+    src='/src/assets/Photo/CannePeche/canneBasique.png'
+    onClick={() => {
+      const [x, y] = points();
+      boutonArgent(x);
+      setCount(count + x);
+      Poisson(y);
+      if (count % 200 === 0) {
+        apparition();
+      }
+    }}
+    style={{ pointerEvents: "all" }}
+  />
+  <button onClick={() => setAnnoyingPopup(true)}>
+    {count} Money
+  </button>
+</div>
+
+{annoyingPopup && (
+  <div className="popup-overlay">
+    <div className="popup-content">
+      <h2>Money</h2>
+      <ul>
+        <li>{money} Money</li>
+      </ul>
+      <button onClick={() => setAnnoyingPopup(false)}>Fermer</button>
+    </div>
+  </div>
+)}
+
+
 
       <h1>Achievements</h1>
       <div className="card">

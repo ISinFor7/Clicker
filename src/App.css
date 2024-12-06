@@ -158,14 +158,14 @@
 }
 
 #object.moving {
-  animation: moveUpDown 2s ease; /* Animation déclenchée par la classe */
+  animation: moveUpDown 5s ease; /* Animation déclenchée par la classe */
 
 }
 
 @keyframes moveUpDown {
   0% {
     opacity: 0%;
-    transform: translateY(10000px); /* Position initiale */
+    transform: translateY(1000px); /* Position initiale */
   }
   50% {
     opacity: 100%;

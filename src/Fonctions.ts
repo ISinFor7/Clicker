@@ -101,6 +101,15 @@ function points() {
   } else {
     let poissonRandom = Math.round(Math.random() * 3);
     j1.nb_poissons += 1;
+    if (j1.nb_poissons == 5) {
+      cinqPoissons.obj = true;
+    }
+    if (j1.nb_poissons == 100) {
+      centPoissons.obj = true;
+    }
+    if (j1.nb_poissons == 500) {
+      cinqCentsPoissons.obj = true;
+    }
     return [5 * poissonRandom, fish[poissonRandom]];
   }
 }
