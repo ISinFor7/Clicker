@@ -1,9 +1,10 @@
 export default { points, equip, buy, gacha }
 
 enum cap {
-    
+    Arpon,canneBasique,cannePrenium
 }
 enum fish {
+  Baleine,poissonBasique,poissonColorer,poissonRouge
 
 }
 type inv = {
