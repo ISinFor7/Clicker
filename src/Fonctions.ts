@@ -39,9 +39,12 @@ function buy(augment) {}
 
 function gacha() {}
 
-function pecherPoisson(nom_cap){
+function pecherPoisson(fish){
   
 }
 function pecherDecher(dechet){
   return dechet.cannette
+}
+function pecherOcean(ocean){
+  const randomIndex = Math.floor(Math.random() *3);
 }
