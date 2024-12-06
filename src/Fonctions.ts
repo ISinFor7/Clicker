@@ -74,7 +74,7 @@ type joueur = {
 };
 
 function points() {
-  let chiffre = Math.round(Math.random() * 5 * stat.poissonSup);
+  let chiffre = Math.round(Math.random() * 5 * j1.poissonSup);
   if (chiffre > 3) {
     j1.nb_dechets += 1;
     return [0, "dechet"];
@@ -83,7 +83,7 @@ function points() {
     j1.nb_coraux += 1;
     return [chiffre + 1, ocean[oceanRandom]];
   } else {
-    let poissonRandom = Math.round(Math.random() * 4);
+    let poissonRandom = Math.round(Math.random() * 4 * j1.rareteSup);
     j1.nb_poissons += 1;
     return [5 * poissonRandom, fish[poissonRandom]];
   }
