@@ -1,6 +1,11 @@
 
-const reactClicked  = false;
+let reactClicked = false;
+let viteClicked = false;
+
 //création des énumérations
+function setReactClicked() {reactClicked=true};
+function setViteClicked() {viteClicked=true};
+
 enum fish {
   "Baleine" = 0,
   "poissonBasique" = 1,
@@ -111,7 +116,7 @@ const speedClick = {num: 4, obj:false, desc: "Cliquer 5 fois en moins d'une seco
 
 const reactLearn = {num: 5, obj: reactClicked, desc: "Cliquer sur React"}
 
-const viteLearn = {num: 6, obj:false, desc: "Cliquer sur Vite"}
+const viteLearn = {num: 6, obj:viteClicked, desc: "Cliquer sur Vite"}
 
 enum achievements {
   cheater,
@@ -129,4 +134,4 @@ function equip(item: cap) {}
 function buy(augment: augment) {}
 
 
-export default { points, equip, buy };
+export { points, equip, buy, setReactClicked, setViteClicked };
