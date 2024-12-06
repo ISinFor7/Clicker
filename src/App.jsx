@@ -81,4 +81,30 @@ function inventory() {
   );
 }
 
+function missions() {
+  return (
+      <div style={{padding: "20px", fontFamily: "Arial, sans-sherif"}}>
+          <h1>Missions</h1>
+              <ul>
+                  {missions.map((mission) => (
+                      <li>mission</li>
+                  ))}
+              </ul>
+      </div>
+  );
+}
+
+function achievements() {
+  return (
+      <div style={{padding: "20px", fontFamily: "Arial, sans-sherif"}}>
+          <h1>Achievements</h1>
+              <ul>
+                  {achievements.map((achievement) => (
+                      <li>achievement</li>
+                  ))}
+              </ul>
+      </div>
+  );
+}
+
 export default App
