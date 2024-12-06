@@ -95,16 +95,6 @@ type mission = {
   desc: string;
 };
 
-enum missions {
-  cinqPoissons,
-  centPoissons,
-  millePoissons,
-  acheteCinq,
-  acheteCent,
-  acheteMille,
-  baleine,
-}
-
 const cheater = { num: 1, obj: false, desc: "Essayer d'inspecter l'élément" };
 
 const cliqueGauche = { num: 2, obj: false, desc: "Clique Gauche" };
@@ -117,9 +107,15 @@ const speedClick = {
   desc: "Cliquer 5 fois en moins d'une seconde",
 };
 
-const reactLearn = { num: 5, obj: reactClicked, desc: "Cliquer sur React" };
+let reactLearn = { num: 1, obj: reactClicked, desc: "Cliquer sur React" };
 
-const viteLearn = { num: 6, obj: viteClicked, desc: "Cliquer sur Vite" };
+let viteLearn = { num: 2, obj: viteClicked, desc: "Cliquer sur Vite" };
+
+let cinqPoissons = { num: 3, obj: false, desc: "Capter 5 poissons"};
+
+let centPoissons = { num: 4, obj: false, desc: "Capter 100 poissons"};
+
+let cinqCentsPoissons = {num : 5, obj: false, desc: "Capter 500 poissons"};
 
 enum achievements {
   cheater,
@@ -129,6 +125,8 @@ enum achievements {
   reactLearn,
   viteLearn,
 }
+
+function ach() {return [reactLearn,viteLearn, cinqPoissons, centPoissons, cinqCentsPoissons]};
 function apparition() {
   const boat = document.getElementById("bateau");
   boat.style.opacity = "1";
@@ -151,4 +149,4 @@ function equip(item: cap) {}
 
 function buy(augment: augment) {}
 
-export { points, equip, buy, setReactClicked, setViteClicked, apparition };
+export { points, equip, buy, setReactClicked, setViteClicked };
