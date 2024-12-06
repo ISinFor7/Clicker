@@ -2,20 +2,30 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
+import { points, equip, buy, setReactClicked, setViteClicked } from "./Fonctions.ts"
 let viteClicked;
-  let setViteClicked ;
+  let setViteClicked2 ;
 let reactClicked;
-  let setReactClicked;
+  let setReactClicked2;
 
 function App() {
   const [count, setCount] = useState(0)
   const [showPopup, setShowPopup] = useState(false);
   const [showAchievementsPopup, setShowAchievementsPopup] = useState(false);
-  [viteClicked, setViteClicked] = useState(false);
-  [reactClicked, setReactClicked] = useState(false);
+  [viteClicked, setViteClicked2] = useState(false);
+  [reactClicked, setReactClicked2] = useState(false);
+  const [showRulesPopup, setShowRulesPopup] = useState(true);
   return (
     <>
+      {showRulesPopup && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <h2>Règles du Jeu</h2>
+            <p>Bienvenue ! Il faut collecter du poisson pour gagner des points!</p>
+            <button onClick={() => setShowRulesPopup(false)}>Fermer</button>
+          </div>
+        </div>
+      )}
       <div>
         <img id="bateau" src='/src/assets/Photo/Bateau/bateau.png'>
         </img>
