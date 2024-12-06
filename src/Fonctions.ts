@@ -75,20 +75,3 @@ function equip(item: cap) {}
 function buy(augment: augment) {}
 
 function gacha() {}
-
-function inventory() {
-  return (
-      <div style={{padding: "20px", fontFamily: "Arial, sans-sherif"}}>
-          <h1>Inventaire</h1>
-          {inventory.length===0 ? (
-              <p>Aucun objet dans l'inventaire.</p>
-          ) : (
-              <ul>
-                  {inventory.map((item, index) => (
-                      <li key={index}>{item}</li>
-                  ))}
-              </ul>
-          )}
-      </div>
-  );
-}
