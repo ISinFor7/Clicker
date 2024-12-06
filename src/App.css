@@ -141,11 +141,11 @@
   height: auto;
   position: absolute;
   left: 0;
-  top: 55%;
+  top: 65%;
   right: -100px;
   transition: right 1s ease;
 
 }
 #bateau.move-left {
-  right: 0; /* Déplace l'image vers la gauche */
+  right: 0;
 }

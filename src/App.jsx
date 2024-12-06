@@ -1,30 +1,31 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+
+
+let viteClicked;
+  let setViteClicked ;
+let reactClicked;
+  let setReactClicked;
 
 function App() {
   const [count, setCount] = useState(0)
   const [showPopup, setShowPopup] = useState(false);
   const [showAchievementsPopup, setShowAchievementsPopup] = useState(false);
-
+  [viteClicked, setViteClicked] = useState(false);
+  [reactClicked, setReactClicked] = useState(false);
   return (
     <>
-      
       <div>
         <img id="bateau" src='/src/assets/Photo/Bateau/bateau.png'>
         </img>
       </div>
+      
       <div className="card">
-        <img id='click_button' src='/src/assets/Photo/CannePeche/canneBasique.png' onClick={() => setCount((count) => count + 1)} style={{"pointer-events": "all"}} />
-        <button onClick={() => setCount((count) => count + 1)}>
+        <img id='click_button' src='/src/assets/Photo/CannePeche/canneBasique.png' onClick={() =>{ const [x, y] = points(); setCount((count) => count + x);animationPeche(y) }} style={{"pointer-events": "all"}} />
+        <button> 
           {count} Money
-          if (count % 200 === 0) {
-    // Ajouter la classe 'move-left' pour faire bouger l'image
-           bateau = document.getElementById('bateau');
-           bateau.classList.add('move-left');
-          }
-
         </button>
       </div>
       <h1> Missions & Achievements  </h1>
@@ -56,9 +57,15 @@ function App() {
           </div>
         </div>
       )}
-      
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
     </>
   )
+}
+
+function animationPeche() {
+  
 }
 
 function inventory() {
@@ -102,6 +109,7 @@ function achievements() {
               </ul>
       </div>
   );
-}
+};
 
 export default App
+
