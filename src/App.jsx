@@ -59,15 +59,15 @@ function App() {
         </button>
       </div>
 
-      <h1>Missions & Achievements</h1>
+      <h1>Achievements</h1>
       <div className="card">
-        <button onClick={() => setShowPopup(true)}>Afficher les missions</button>
+        {/*<button onClick={() => setShowPopup(true)}>Afficher les missions</button>*/}
         <button onClick={() => setShowAchievementsPopup(true)}>
           Afficher les achievements
         </button>
       </div>
 
-      {showPopup && (
+      {/*{showPopup && (
         <div className="popup-overlay">
           <div className="popup-content">
             <h2>Liste des Missions</h2>
@@ -77,14 +77,14 @@ function App() {
             <button onClick={() => setShowPopup(false)}>Fermer</button>
           </div>
         </div>
-      )}
+      )}*/}
 
       {showAchievementsPopup && (
         <div className="popup-overlay">
           <div className="popup-content">
             <h2>Liste des achievements</h2>
             <ul>
-              <li>Achievement 1</li>
+              { achievements()}
             </ul>
             <button onClick={() => setShowAchievementsPopup(false)}>Fermer</button>
           </div>
@@ -130,17 +130,19 @@ function missions() {
 }
 
 function achievements() {
+  let achievementss = ach();
   return (
-      <div style={{padding: "20px", fontFamily: "Arial, sans-sherif"}}>
-          <h1>Achievements</h1>
-              <ul>
-                  {achievements.map((achievement) => (
-                      <li>achievement</li>
-                  ))}
-              </ul>
-      </div>
+    <div style={{ padding: "10px", fontFamily: "Arial, sans-serif" }}>
+      <ul>
+        {achievementss.map((achievement, index) => (
+          <li key={index}>
+            {achievement.num}. {achievement.desc} ({achievement.obj ? 'True' : 'False'})
+          </li>
+        ))}
+      </ul>
+    </div>
   );
-};
+}
 
 export default App;
 

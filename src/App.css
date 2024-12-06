@@ -100,7 +100,7 @@
 }
 
 .popup-content {
-  background: rgba(255, 255, 255, 0.995);
+  background: rgba(255, 255, 255, 0.882);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -126,7 +126,7 @@
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 14px;
-  color: white;
+  color: rgba(255, 255, 255, 0.897);
   background-color: #007BFF;
   border: none;
   border-radius: 5px;
