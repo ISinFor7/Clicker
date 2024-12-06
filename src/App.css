@@ -140,11 +140,39 @@
   position: absolute;
   bottom: 0; /* Le bateau commence en bas de la page */
   left: -104px; /* Le bateau commence à gauche */
-  width: 100px; /* La taille du bateau */
+  width: 150px; /* La taille du bateau */
   height: auto; /* Conserve les proportions */
   transition: transform 2s ease, opacity 1s ease; /* Animation pour le mouvement et la disparition */
 }
 
 #bateau.move {
   transform: translateX(300px);
+}
+#object {
+  opacity: 0%;
+  position: absolute; /* Nécessaire pour déplacer verticalement l'image */
+  transition: transform 0.5s ease; /* Transition pour un mouvement fluide */
+  width: 150px;
+  height: auto;
+  bottom: 10px;
+}
+
+#object.moving {
+  animation: moveUpDown 2s ease; /* Animation déclenchée par la classe */
+
+}
+
+@keyframes moveUpDown {
+  0% {
+    opacity: 0%;
+    transform: translateY(10000px); /* Position initiale */
+  }
+  50% {
+    opacity: 100%;
+    transform: translateY(-50px); /* Descend de 50px */
+  }
+  100% {
+    opacity: 0%;
+    transform: translateY(1000px); /* Revient à la position initiale */
+  }
 }

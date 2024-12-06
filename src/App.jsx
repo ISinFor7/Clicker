@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { points, equip, buy, setReactClicked, setViteClicked , apparition} from "./Fonctions.ts"
+import { points, equip, buy, setReactClicked, setViteClicked,Poisson , apparition} from "./Fonctions.ts"
 let viteClicked;
   let setViteClicked2 ;
 let reactClicked;
@@ -47,10 +47,13 @@ function App() {
 
       <div>
         <img id="bateau" src="/src/assets/Photo/Bateau/bateau.png" alt="Bateau" />
+      
+        <img id="object" src='/src/assets/Photo/Poison/Poisson.png'>
+        </img>
       </div>
       
       <div className="card">
-        <img id='click_button' src='/src/assets/Photo/CannePeche/canneBasique.png' onClick={() =>{ const [x, y] = points(); setCount((count) => count + x);animationPeche(y);if (count%200===0) {apparition()}}} style={{"pointer-events": "all"}} />
+        <img id='click_button' src='/src/assets/Photo/CannePeche/canneBasique.png' onClick={() =>{ const [x, y] = points(); setCount((count) => count + x);Poisson();animationPeche(y);if (count%200===0) {apparition()}}} style={{"pointer-events": "all"}} />
         <button> 
           {count} Money
         </button>

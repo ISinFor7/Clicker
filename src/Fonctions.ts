@@ -8,7 +8,18 @@ function setReactClicked() {
 function setViteClicked() {
   viteClicked = true;
 }
+function Poisson() {
+  const ob = document.getElementById('object');
 
+  // Ajouter la classe "moving" pour déclencher l'animation
+  ob.classList.add('moving');
+
+  // Retirer la classe après l'animation pour pouvoir la relancer
+  ob.addEventListener('animationend', () => {
+    ob.classList.remove('moving');
+  }, { once: true }); // Évite que l'écouteur soit déclenché plusieurs fois
+
+}
 enum fish {
   "poissonBasique" = 0,
   "poissonRouge" = 1,
@@ -156,4 +167,4 @@ function equip(item: cap) {}
 
 function buy(augment: augment) {}
 
-export { points, equip, buy, setReactClicked, setViteClicked ,apparition};
+export { points, equip, buy, setReactClicked, setViteClicked,Poisson ,apparition};
