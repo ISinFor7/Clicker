@@ -49,7 +49,7 @@ function App() {
       {showAchievementsPopup && (
         <div className="popup-overlay">
           <div className="popup-content">
-            <h2>Liste des Missions</h2>
+            <h2>Liste des achievements</h2>
             <ul>
               <li> Achievement 1 </li>
             </ul>
