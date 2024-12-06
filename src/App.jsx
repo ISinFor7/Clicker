@@ -20,6 +20,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
+        <img id='click_button' src='/src/assets/Photo/CannePeche/canneBasique.png' onClick={() => setCount((count) => count + 1)} style={{"pointer-events": "all"}} />
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>

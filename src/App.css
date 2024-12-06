@@ -19,10 +19,9 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-.image-button {
+#click_button {
   width: 100px; /* Largeur de l'image */
   height: 100px; /* Hauteur de l'image */
-  background-image: url('assets/Photo/CannePeche/canneBasique.png'); /* Chemin vers l'image */
   background-size: cover; /* L'image couvre entièrement le bouton */
   background-position: center; /* Centrage de l'image */
   background-repeat: no-repeat; /* Empêche la répétition */
