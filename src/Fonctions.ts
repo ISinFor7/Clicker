@@ -121,7 +121,16 @@ enum achievements {
   reactLearn,
   viteLearn,
 }
+function apparition(){
+  const bateau = document.getElementById('bateau');
+  
+ 
+    bateau.classList.add('move');
 
+    bateau.addEventListener('transitionend', () => {
+    bateau.style.display = 'none'; 
+  });
+}
 
 
 function equip(item: cap) {}

@@ -136,16 +136,16 @@
 .popup-content button:hover {
   background-color: #0056b3;
 }
-#bateau{
-  width: 200px;
-  height: auto;
+#bateau {
   position: absolute;
-  left: 0;
-  top: 65%;
-  right: -100px;
-  transition: right 1s ease;
-
+  bottom: 0; /* Le bateau commence en bas de la page */
+  left: 0; /* Le bateau commence à gauche */
+  width: 100px; /* La taille du bateau */
+  height: auto; /* Conserve les proportions */
+  transition: transform 2s ease, opacity 1s ease; /* Animation pour le mouvement et la disparition */
 }
-#bateau.move-left {
-  right: 0;
+
+#bateau.move {
+  transform: translateX(100vw) translateY(-100vh); /* Le bateau se déplace vers la droite et vers le haut */
+  opacity: 0; /* Fait disparaître le bateau à la fin */
 }

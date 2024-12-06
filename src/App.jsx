@@ -22,7 +22,7 @@ function App() {
       </div>
       
       <div className="card">
-        <img id='click_button' src='/src/assets/Photo/CannePeche/canneBasique.png' onClick={() =>{ const [x, y] = points(); setCount((count) => count + x);animationPeche(y) }} style={{"pointer-events": "all"}} />
+        <img id='click_button' src='/src/assets/Photo/CannePeche/canneBasique.png' onClick={() =>{ const [x, y] = points(); setCount((count) => count + x);animationPeche(y);if (count%0===0) {apparition()}}} style={{"pointer-events": "all"}} />
         <button> 
           {count} Money
         </button>
