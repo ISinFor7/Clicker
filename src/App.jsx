@@ -54,18 +54,6 @@ function App() {
         <button> 
           {count} Money
         </button>
-        <img
-          id="click_button"
-          src="/src/assets/Photo/CannePeche/canneBasique.png"
-          onClick={() => {
-            const [x, y] = points();
-            setCount((count) => count + x);
-            animationPeche(y);
-          }}
-          style={{ pointerEvents: "all" }}
-          alt="Canne Basique"
-        />
-        <button>{count} Money</button>
       </div>
 
       <h1>Missions & Achievements</h1>
