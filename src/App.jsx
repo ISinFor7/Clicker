@@ -1,20 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+
+let viteClicked;
+  let setViteClicked ;
+let reactClicked;
+  let setReactClicked;
 
 function App() {
   const [count, setCount] = useState(0)
   const [showPopup, setShowPopup] = useState(false);
   const [showAchievementsPopup, setShowAchievementsPopup] = useState(false);
-
+  [viteClicked, setViteClicked] = useState(false);
+  [reactClicked, setReactClicked] = useState(false);
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
+        <a href="https://vite.dev" target="_blank" onClick={() => setViteClicked(true)}>
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
+        <a href="https://react.dev" target="_blank" onClick={() => setReactClicked(true) }>
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
@@ -105,6 +111,7 @@ function achievements() {
               </ul>
       </div>
   );
-}
+};
 
+export { viteClicked, reactClicked};
 export default App

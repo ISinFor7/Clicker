@@ -1,5 +1,5 @@
 export default { points, equip, buy, gacha };
-
+import { reactClicked } from "./App.jsx";
 //création des énumérations
 enum fish {
   Baleine,
@@ -77,31 +77,50 @@ type joueur = {
 };
 
 function points() {
-  let chiffre = Math.random() * 5 * stat.poissonSup;
-  if (chiffre > 3) {
-    return;
-  } else if (chiffre > 2) {
-    return;
-  } else {
-    return 1;
-  }
+  return 1;
 }
+
+type mission = {
+  num: number;
+  obj: boolean;
+  desc: string;
+}
+
+enum missions {
+  cinqPoissons,
+  centPoissons,
+  millePoissons,
+  acheteCinq,
+  acheteCent,
+  acheteMille,
+  baleine
+}
+
+const cheater = {num: 1, obj:false, desc:"Essayer d'inspecter l'élément"}
+
+const cliqueGauche = {num: 2, obj: false, desc:"Clique Gauche"}
+
+const fullscreen = {num: 3, obj:false, desc:"Entrer en fullscreen"}
+
+const speedClick = {num: 4, obj:false, desc: "Cliquer 5 fois en moins d'une seconde"}
+
+const reactLearn = {num: 5, obj: reactClicked, desc: "Cliquer sur React"}
+
+const viteLearn = {num: 6, obj:false, desc: "Cliquer sur Vite"}
+
+enum achievements {
+  cheater,
+  cliqueGauche,
+  fullscreen,
+  speedClick,
+  reactLearn,
+  viteLearn,
+}
+
 
 function equip(item: cap) {}
 
 function buy(augment: augment) {}
 
 function gacha() {}
-<<<<<<< HEAD
 
-function pecherPoisson(fish){
-  
-}
-function pecherDecher(dechet){
-  return dechet.cannette
-}
-function pecherOcean(ocean){
-  const randomIndex = Math.floor(Math.random() *3);
-}
-=======
->>>>>>> b187cb1831cd035ca7081681c0ac992618c568db
