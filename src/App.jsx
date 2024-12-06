@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { points, equip, buy, setReactClicked, setViteClicked,Poisson , apparition} from "./Fonctions.ts"
+import { points, equip, buy, setReactClicked, setViteClicked,Poisson , apparition,ach} from "./Fonctions.ts"
 let viteClicked;
   let setViteClicked2 ;
 let reactClicked;
@@ -53,7 +53,7 @@ function App() {
       </div>
       
       <div className="card">
-        <img id='click_button' src='/src/assets/Photo/CannePeche/canneBasique.png' onClick={() =>{ const [x, y] = points();boutonArgent(x); setCount((count) => count + x);Poisson();animationPeche(y);if (count%200===0) {apparition()}}} style={{"pointer-events": "all"}} />
+        <img id='click_button' src='/src/assets/Photo/CannePeche/canneBasique.png' onClick={() =>{ const [x, y] = points(); setCount((count) => count + x);boutonArgent(x);Poisson(y);if (count%200===0) {apparition()}}} style={{"pointer-events": "all"}} />
         <button>
           
           {count} Money
@@ -99,7 +99,6 @@ function App() {
   );
 }
 
-function animationPeche(y) {}
 function inventory() {
   return (
       <div style={{padding: "20px", fontFamily: "Arial, sans-sherif"}}>
@@ -146,13 +145,13 @@ function achievements() {
 }
 
 function boutonArgent(x) { 
-    showPopup && (
+  return (
       <div className="popup-overlay">
         <div className="popup-content">
-          <h3>x</h3>
+          <h3>{x}</h3>
         </div>
       </div>
-    )
+  )
 }
 
 export default App;

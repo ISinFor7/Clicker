@@ -9,31 +9,24 @@ function setViteClicked() {
   viteClicked = true;
 }
 
-const fish = ["poissonBasique", "poissonRouge", "poissonColorer", "Baleine"];
+const fish = ["Poisson", "poissonRouge", "PoissonColorer", "baleine"];
 
 const ocean = ["corail", "algue"];
-function Poisson() {
-  const ob = document.getElementById('object');
 
+function Poisson(y) {
+  const ob = document.getElementById("object");
+  ob.setAttribute("src", "/src/assets/Photo/Poison/" + y + ".png");
   // Ajouter la classe "moving" pour déclencher l'animation
-  ob.classList.add('moving');
+  ob.classList.add("moving");
 
   // Retirer la classe après l'animation pour pouvoir la relancer
-  ob.addEventListener('animationend', () => {
-    ob.classList.remove('moving');
-  }, { once: true }); // Évite que l'écouteur soit déclenché plusieurs fois
-
-}
-enum fish {
-  "poissonBasique" = 0,
-  "poissonRouge" = 1,
-  "poissonColorer" = 2,
-  "Baleine" = 3,
-}
-
-enum ocean {
-  "corail",
-  "algue",
+  ob.addEventListener(
+    "animationend",
+    () => {
+      ob.classList.remove("moving");
+    },
+    { once: true }
+  ); // Évite que l'écouteur soit déclenché plusieurs fois
 }
 
 enum stat {
@@ -102,11 +95,11 @@ function points() {
     j1.nb_dechets += 1;
     return [0, "dechet"];
   } else if (chiffre > 2) {
-    let oceanRandom = Math.round(Math.random() * 4);
+    let oceanRandom = Math.round(Math.random());
     j1.nb_coraux += 1;
     return [chiffre + 1, ocean[oceanRandom]];
   } else {
-    let poissonRandom = Math.round(Math.random() * 4 * j1.rareteSup);
+    let poissonRandom = Math.round(Math.random() * 3);
     j1.nb_poissons += 1;
     return [5 * poissonRandom, fish[poissonRandom]];
   }
@@ -134,11 +127,11 @@ let reactLearn = { num: 1, obj: reactClicked, desc: "Cliquer sur React" };
 
 let viteLearn = { num: 2, obj: viteClicked, desc: "Cliquer sur Vite" };
 
-let cinqPoissons = { num: 3, obj: false, desc: "Capter 5 poissons"};
+let cinqPoissons = { num: 3, obj: false, desc: "Capter 5 poissons" };
 
-let centPoissons = { num: 4, obj: false, desc: "Capter 100 poissons"};
+let centPoissons = { num: 4, obj: false, desc: "Capter 100 poissons" };
 
-let cinqCentsPoissons = {num : 5, obj: false, desc: "Capter 500 poissons"};
+let cinqCentsPoissons = { num: 5, obj: false, desc: "Capter 500 poissons" };
 
 enum achievements {
   cheater,
@@ -149,7 +142,9 @@ enum achievements {
   viteLearn,
 }
 
-function ach() {return [reactLearn,viteLearn, cinqPoissons, centPoissons, cinqCentsPoissons]};
+function ach() {
+  return [reactLearn, viteLearn, cinqPoissons, centPoissons, cinqCentsPoissons];
+}
 function apparition() {
   const boat = document.getElementById("bateau");
   boat.style.opacity = "1";
@@ -172,4 +167,13 @@ function equip(item: cap) {}
 
 function buy(augment: augment) {}
 
-export { points, equip, buy, setReactClicked, setViteClicked,Poisson ,apparition};
+export {
+  points,
+  equip,
+  buy,
+  setReactClicked,
+  setViteClicked,
+  Poisson,
+  apparition,
+  ach,
+};
